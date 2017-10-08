@@ -42,6 +42,13 @@ class Cancion {
 	method comprarLetra(cancion) = cancion.contenidoDeLetra().max(self.contenidoDeLetra())
 	method comprarTitulo(cancion) = cancion.contenidoDeTitulo().max(self.contenidoDeTitulo())
 	
+	method remixearCancion() = new Cancion(duracion*3 ,"mueve tu cuelpo baby "+ letra +" yeah oh yeah",titulo,autor)
+	method mashupsCancion(listaDeCanciones){
+		var duracionDelMashup = listaDeCanciones.map({cancion => cancion.duracion()}).max()
+		var tituloDelMashup = listaDeCanciones.map({cancion => cancion.letra()}).fold("",{acum, letras => letras +" "+ acum })
+		return new Cancion(duracionDelMashup,tituloDelMashup,tituloDelMashup,autor)
+	}
+	
 	method cancionCorta() {
 		return duracion < 180
 	}
