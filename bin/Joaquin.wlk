@@ -31,7 +31,7 @@ class Joaquin inherits Musico {
         }
     }
     method ejecutaBienUnaCancion(cancion){    	
-    	return (cancion.duracion() > 300) || (cancion.esDuenioDeLaCancion(self)) || (habilidad > 60)
+    	return (cancion.duracion() > 300) || (cancion.esDuenioDeLaCancion(self)) || (self.habilidad() > 60)
     }
     method costoDeUnaPresentacion(presentacion){
         if(presentacion.solista()){
