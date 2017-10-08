@@ -32,4 +32,7 @@ class Cancion {
 	method duracion() {
 		return duracion
 	}
+	method letra(){
+		return letra
+	}
 }
