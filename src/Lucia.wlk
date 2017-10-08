@@ -20,7 +20,9 @@ class Lucia inherits Musico {
 		palabraClave = laPalabraClave
 	}
 	
-	method ejecutaBienUnaCancion(cancion) = cancion.estaEnLaLetra(palabraClave)
+	method ejecutaBienUnaCancion(cancion){
+		return cancion.estaEnLaLetra(palabraClave) || (cancion.esDuenioDeLaCancion(self)) || (habilidad > 60)
+	}
 	method costoDeUnaPresentacion(presentacion){
 		if(presentacion.esEnUnLugarConcurrido()){
 			return 500
