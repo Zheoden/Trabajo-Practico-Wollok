@@ -43,14 +43,20 @@ describe "Tests de la entrega 1, 2 y 3"{
 	var cancionMasLargaDeParaLosArboles
 	var cancionMasLargaDeLaSole
 	var cancionMasLargaDeEspecialLaFamilia
+	var laFamiliaRemixeada
+	var mashupCrisamentoConAlmaDeDiamante
+	var mashupAlmaDeDiamanteConCrisamento
 	
 	fixture{		
 		laFamilia = new Cancion(264, "Quiero brindar por mi gente sencilla, por el amor brindo por la familia","La Familia",joaquin)
+		laFamiliaRemixeada = new Cancion(264*3, "mueve tu cuelpo baby Quiero brindar por mi gente sencilla, por el amor brindo por la familia yeah oh yeah","La Familia",joaquin)
 		cisne = new Cancion(312, "Hoy el viento se abrio quedo vacio el aire una vez mas y el manantial broto y nadie esta aqui y puedo ver que solo estallan las hojas al brillar","Cisne",luisAlberto)
 		eres = new Cancion(145, "Eres lo mejor que me paso en la vida, no tengo duda, no habra mas nada despues de ti. Eres lo que le dio brillo al dia a dia, y asi sera por siempre, no cambiara, hasta el final de mis dias","Eres",soledad)
 		corazonAmericano = new Cancion(154, "Canta corazon, canta mas alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazon, como soniamos","Corazon Americano",soledad)
 		almaDeDiamante = new Cancion(216, "Ven a mi con tu dulce luz alma de diamante. Y aunque el sol se nuble despues sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven asi con la humanidad alma de diamante","Alma De Diamante",luisAlberto)
 		crisantemo = new Cancion(175, "Tocame junto a esta pared, yo quede por aqui cuando no hubo mas luz, quiero mirar a traves de mi piel. Crisantemo, que se abrio, encuentra el camino hacia el cielo","Crisantemo",luisAlberto)
+		mashupCrisamentoConAlmaDeDiamante = new Cancion(216,"Tocame junto a esta pared, yo quede por aqui cuando no hubo mas luz, quiero mirar a traves de mi piel. Crisantemo, que se abrio, encuentra el camino hacia el cielo Ven a mi con tu dulce luz alma de diamante. Y aunque el sol se nuble despues sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven asi con la humanidad alma de diamante","Tocame junto a esta pared, yo quede por aqui cuando no hubo mas luz, quiero mirar a traves de mi piel. Crisantemo, que se abrio, encuentra el camino hacia el cielo Ven a mi con tu dulce luz alma de diamante. Y aunque el sol se nuble despues sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven asi con la humanidad alma de diamante",luisAlberto)
+		mashupAlmaDeDiamanteConCrisamento = new Cancion(216,"Ven a mi con tu dulce luz alma de diamante. Y aunque el sol se nuble despues sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven asi con la humanidad alma de diamante Tocame junto a esta pared, yo quede por aqui cuando no hubo mas luz, quiero mirar a traves de mi piel. Crisantemo, que se abrio, encuentra el camino hacia el cielo","Ven a mi con tu dulce luz alma de diamante. Y aunque el sol se nuble despues sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven asi con la humanidad alma de diamante Tocame junto a esta pared, yo quede por aqui cuando no hubo mas luz, quiero mirar a traves de mi piel. Crisantemo, que se abrio, encuentra el camino hacia el cielo",luisAlberto)
 		especialLaFamilia = new Album("Especial La Familia",#{laFamilia},new Date(17,6,1992),100000,89000)
 		paraLosArboles = new Album("Para los arboles",#{cisne,almaDeDiamante},new Date(31,3,2003),50000,49000)
 		justCrisantemo = new Album("Just Crisantemo",#{crisantemo},new Date(5,12,2007),28000,27500)
@@ -251,6 +257,18 @@ describe "Tests de la entrega 1, 2 y 3"{
 	test "el costo del pdpalooza si toca solo Luis Alberto es de 1200"{
 		pdpalooza.agregarMusico(luisAlberto)
 		assert.equals(pdpalooza.costoDeLaPresentacion(),1200)
+	}
+	test "Lucia ahora interpreta bien Cisne, ya que tiene mas de 60 de habilidad" {
+		assert.that(lucia.ejecutaBienUnaCancion(cisne))
+	}
+	test "Remixear La Familia"{
+		assert.equals(laFamilia.remixearCancion().letra(),laFamiliaRemixeada.letra())
+	}
+	test "Mashup Crisamento con Alma de Diamante distinto al Mashup de Alma de Diamante con Crisamento en la letra"{
+		assert.notEquals(mashupCrisamentoConAlmaDeDiamante.letra(),mashupAlmaDeDiamanteConCrisamento.letra())
+	}	
+	test "Mashup Crisamento con Alma de Diamante distinto al Mashup de Alma de Diamante con Crisamento en el titulo"{
+		assert.notEquals(mashupCrisamentoConAlmaDeDiamante.titulo(),mashupAlmaDeDiamanteConCrisamento.titulo())
 	}
 	
 }
