@@ -245,6 +245,12 @@ describe "Tests de la entrega 1, 2 y 3"{
 		pdpalooza.agregarMusico(luisAlberto)
 		assert.equals(pdpalooza.musicos(),#{luisAlberto})
 	}
-	
+	test "el Pdpalooza es en un lugar concurrido"{
+		assert.that(pdpalooza.esEnUnLugarConcurrido())
+	}
+	test "el costo del pdpalooza si toca solo Luis Alberto es de 1200"{
+		pdpalooza.agregarMusico(luisAlberto)
+		assert.equals(pdpalooza.costoDeLaPresentacion(),1200)
+	}
 	
 }
