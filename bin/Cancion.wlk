@@ -13,10 +13,12 @@ import Albumes.*
 class Cancion {
 	var duracion
 	var letra
+	var autor
 	
-	constructor(nuevaDuracion,nuevaLetra) {
+	constructor(nuevaDuracion,nuevaLetra,nuevoAutor) {
 		duracion = nuevaDuracion
 		letra = nuevaLetra
+		autor = nuevoAutor
 	}
 	
 	method estaEnLaLetra(palabra) {
@@ -25,7 +27,8 @@ class Cancion {
 	method contenidoDeLetra(){
 		return letra.length()
 	}
-
+	method esDuenioDeLaCancion(elAutor) = autor == elAutor
+	
 	method cancionCorta() {
 		return duracion < 180
 	}
