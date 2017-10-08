@@ -261,6 +261,13 @@ describe "Tests de la entrega 1, 2 y 3"{
 	test "Lucia ahora interpreta bien Cisne, ya que tiene mas de 60 de habilidad" {
 		assert.that(lucia.ejecutaBienUnaCancion(cisne))
 	}
+	test "Joaquin no toca bien 'eres' ya que su habilidad es 25" {
+		assert.notThat(joaquin.ejecutaBienUnaCancion(eres))
+	}
+	test "kike entra a un grupo y puede tocar la cancion eres bien ya que tiene 80 de habilidad"{
+		kike.entrarAUnGrupo(pimpinela)		
+		assert.that(kike.ejecutaBienUnaCancion(eres))
+	}
 	test "Remixear La Familia"{
 		assert.equals(laFamilia.remixearCancion().letra(),laFamiliaRemixeada.letra())
 	}
