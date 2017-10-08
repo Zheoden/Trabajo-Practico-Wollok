@@ -1,14 +1,19 @@
+import Albumes.*
 import Cancion.*
+import Exceptions.*
 import Fender.*
 import Gibson.*
 import Joaquin.*
 import LaTrastienda.*
 import Lucia.*
+import LuisAlberto.*
 import LunaPark.*
+import Musico.*
+import Pdpalooza.*
 import Pimpinela.*
 import Presentacion.*
 import Solista.*
-import Albumes.*
+
 
 class Musico {
 	var albumesPublicados = #{}
@@ -20,7 +25,6 @@ class Musico {
 		grupo = grupoOSolista
 	}
 	method esMinimalista() = albumesPublicados.all ({album => album.albumMinimalista()})
-	
 	method transformarAlbumACancion() = albumesPublicados.map({album => album.canciones()}).flatten()
 	method laCancionTieneUnaPalabra (palabra) = self.transformarAlbumACancion().filter({ cancion => cancion.estaEnLaLetra(palabra) }).asSet()
 	method duracionDeObra(){
@@ -33,6 +37,23 @@ class Musico {
 	method laPego() = albumesPublicados.all {album => album.seVendioBien()}
 	method habilidad() = habilidad
 	method esSolista() = grupo.esSolista()
+	method tieneLaHabilidadSuficiente() = self.habilidad() > 70
+	method tieneLaHabilidadParaTocarEnELPdpalooza(){
+		if(!self.tieneLaHabilidadSuficiente()){
+			throw new NoTiene70DeHabilidad("el musico no tiene 70 de habilidad")
+		}else{
+			return true
+		}
+	}
+	method compusoAlgunaCancion() = albumesPublicados != #{}
+	method tieneLaCantidadDeCancionesParaTocarEnELPdpalooza(){
+		if(!self.compusoAlgunaCancion()){
+			throw new NoTieneAlMenosUnaCancion("el musico no compuso ninguna cancion")
+		}else{
+			return true
+		}
+	}
+
 	method dejarGrupo(){
 		grupo.eliminarDelGrupo(self)
 		self.entrarAUnGrupo(solista)

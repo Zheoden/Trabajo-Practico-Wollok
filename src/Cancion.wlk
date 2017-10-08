@@ -18,10 +18,12 @@ class Cancion {
 	var duracion
 	var letra
 	var autor
+	var titulo
 	
-	constructor(nuevaDuracion,nuevaLetra,nuevoAutor) {
+	constructor(nuevaDuracion,nuevaLetra,nuevoTitulo,nuevoAutor) {
 		duracion = nuevaDuracion
 		letra = nuevaLetra
+		titulo = nuevoTitulo
 		autor = nuevoAutor
 	}
 	
