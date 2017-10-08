@@ -9,6 +9,7 @@ import Pimpinela.*
 import Presentacion.*
 import Solista.*
 import Albumes.*
+import Exceptions.*
 
 class Cancion {
 	var duracion

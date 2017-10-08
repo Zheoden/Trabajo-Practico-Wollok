@@ -9,6 +9,7 @@ import LunaPark.*
 import Pimpinela.*
 import Presentacion.*
 import Solista.*
+import Exceptions.*
 
 
 class Album {

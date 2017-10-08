@@ -10,6 +10,7 @@ import Presentacion.*
 import Solista.*
 import Albumes.*
 import Musico.*
+import Exceptions.*
 
 
 class Lucia inherits Musico {
