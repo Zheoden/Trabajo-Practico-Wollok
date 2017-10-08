@@ -1,4 +1,6 @@
+import Albumes.*
 import Cancion.*
+import Exceptions.*
 import Fender.*
 import Gibson.*
 import Joaquin.*
@@ -6,11 +8,11 @@ import LaTrastienda.*
 import Lucia.*
 import LuisAlberto.*
 import LunaPark.*
+import Musico.*
+import Pdpalooza.*
 import Pimpinela.*
 import Presentacion.*
 import Solista.*
-import Musico.*
-import Albumes.*
 
 describe "Tests de la entrega 1, 2 y 3"{ 
 	
@@ -229,5 +231,20 @@ describe "Tests de la entrega 1, 2 y 3"{
 	test "Joaquin la pego"{
 		assert.that(joaquin.laPego())
 	}
+	
+	//Entrega 3
+	test "Lucia no puede tocar en el Pdpalooza ya que no compuso ninguna cancion ni tiene mas de 70 de habilidad"{
+		pdpalooza.agregarMusico(lucia)
+		assert.equals(pdpalooza.musicos(),#{})
+	}
+	test "Joaquin no puede tocar en el Pdpalooza ya que no tiene 70 de habilidad"{
+		pdpalooza.agregarMusico(joaquin)
+		assert.equals(pdpalooza.musicos(),#{})
+	}
+	test "Luis Alberto puede tocar en el Pdpalooza"{
+		pdpalooza.agregarMusico(luisAlberto)
+		assert.equals(pdpalooza.musicos(),#{luisAlberto})
+	}
+	
 	
 }
