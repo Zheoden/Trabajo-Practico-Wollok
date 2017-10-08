@@ -38,27 +38,9 @@ class Cancion {
 	}
 	method esDuenioDeLaCancion(elAutor) = autor == elAutor
 	//Comparacion de canciones
-	method comprarDuracion(cancion){
-		if(cancion.duracion() > self.duracion()){
-			return cancion
-		}else{
-			return self
-		}
-	}
-	method comprarLetra(cancion){
-		if(cancion.contenidoDeLetra() > self.contenidoDeLetra()){
-			return cancion
-		}else{
-			return self
-		}
-	}	
-	method comprarTitulo(cancion){
-		if(cancion.contenidoDeTitulo() > self.contenidoDeTitulo()){
-			return cancion
-		}else{
-			return self
-		}
-	}
+	method comprarDuracion(cancion) = cancion.duracion().max(self.duracion())
+	method comprarLetra(cancion) = cancion.contenidoDeLetra().max(self.contenidoDeLetra())
+	method comprarTitulo(cancion) = cancion.contenidoDeTitulo().max(self.contenidoDeTitulo())
 	
 	method cancionCorta() {
 		return duracion < 180

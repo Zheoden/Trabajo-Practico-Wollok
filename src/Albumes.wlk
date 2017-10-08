@@ -34,4 +34,8 @@ class Album {
 	method cancionMasLarga() = canciones.max {cancion => cancion.contenidoDeLetra()}
 	method canciones() = canciones
 	method seVendioBien()= unidadesVendidas > unidadesALaVenta * 0.75
+	
+	method mayorCancionSegunDuracion() = canciones.max{cancion => cancion.comprarDuracion(cancion)}
+	method mayorCancionSegunLetra() = canciones.max{cancion => cancion.comprarLetra(cancion)}
+	method mayorCancionSegunTitulo() = canciones.max{cancion => cancion.comprarTitulo(cancion)}
 }
