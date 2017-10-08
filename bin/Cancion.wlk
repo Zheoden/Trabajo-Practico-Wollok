@@ -58,4 +58,7 @@ class Cancion {
 	method letra(){
 		return letra
 	}
+	method titulo(){
+		return titulo
+	}
 }
