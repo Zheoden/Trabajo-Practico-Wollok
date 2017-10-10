@@ -1,0 +1,136 @@
+import Albumes.*
+import Cancion.*
+import Exceptions.*
+import Fender.*
+import Gibson.*
+import MusicoDeGrupo.*
+import LaTrastienda.*
+import VocalistaPopular.*
+import LuisAlberto.*
+import LunaPark.*
+import Musico.*
+import Pdpalooza.*
+import Pimpinela.*
+import Presentacion.*
+import Solista.*
+
+describe "Tests de la entrega 2"{ 
+	
+	var cisne
+	var laFamilia
+	var presentacionLunaPark
+	var presentacionLaTrastienda
+	var almaDeDiamante
+	var crisantemo
+	var eres
+	var corazonAmericano
+	var especialLaFamilia
+	var laSole
+	var paraLosArboles
+	var justCrisantemo
+	var lucia
+	var joaquin
+	var kike
+	var soledad
+	var cancionesDeLuisAlbertoConLaPalabraCielo
+	var cancionesDeLuisAlbertoConLaPalabraPujante
+	var cancionMasLargaDeParaLosArboles
+	var cancionMasLargaDeLaSole
+	var cancionMasLargaDeEspecialLaFamilia
+	var laFamiliaRemixeada
+	
+	fixture{		
+		laFamilia = new Cancion(264, "Quiero brindar por mi gente sencilla, por el amor brindo por la familia","La Familia",joaquin)
+		laFamiliaRemixeada = new Cancion(264*3, "mueve tu cuelpo baby Quiero brindar por mi gente sencilla, por el amor brindo por la familia yeah oh yeah","La Familia",joaquin)
+		cisne = new Cancion(312, "Hoy el viento se abrio quedo vacio el aire una vez mas y el manantial broto y nadie esta aqui y puedo ver que solo estallan las hojas al brillar","Cisne",luisAlberto)
+		eres = new Cancion(145, "Eres lo mejor que me paso en la vida, no tengo duda, no habra mas nada despues de ti. Eres lo que le dio brillo al dia a dia, y asi sera por siempre, no cambiara, hasta el final de mis dias","Eres",soledad)
+		corazonAmericano = new Cancion(154, "Canta corazon, canta mas alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazon, como soniamos","Corazon Americano",soledad)
+		almaDeDiamante = new Cancion(216, "Ven a mi con tu dulce luz alma de diamante. Y aunque el sol se nuble despues sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven asi con la humanidad alma de diamante","Alma De Diamante",luisAlberto)
+		crisantemo = new Cancion(175, "Tocame junto a esta pared, yo quede por aqui cuando no hubo mas luz, quiero mirar a traves de mi piel. Crisantemo, que se abrio, encuentra el camino hacia el cielo","Crisantemo",luisAlberto)
+		especialLaFamilia = new Album("Especial La Familia",#{laFamilia},new Date(17,6,1992),100000,89000)
+		paraLosArboles = new Album("Para los arboles",#{cisne,almaDeDiamante},new Date(31,3,2003),50000,49000)
+		justCrisantemo = new Album("Just Crisantemo",#{crisantemo},new Date(5,12,2007),28000,27500)
+		lucia = new Lucia(70,pimpinela,#{},"familia")
+		laSole = new Album("La Sole",#{eres,corazonAmericano},new Date(4,2,2005),200000,130000)
+		soledad = new Lucia(55,solista,#{laSole},"amor")
+		joaquin = new Joaquin(5,#{especialLaFamilia},20,pimpinela)
+		kike = new Joaquin(20,#{},60,solista)
+		presentacionLunaPark = new Presentacion(2017,04,20,lunaPark,#{luisAlberto,joaquin,lucia})
+		presentacionLaTrastienda = new Presentacion(2017,11,15,laTrastienda,#{luisAlberto,joaquin,lucia})
+		luisAlberto.agregarAlbum(paraLosArboles)
+		luisAlberto.agregarAlbum(justCrisantemo)
+		cancionesDeLuisAlbertoConLaPalabraCielo = luisAlberto.laCancionTieneUnaPalabra("cielo")
+		cancionesDeLuisAlbertoConLaPalabraPujante = luisAlberto.laCancionTieneUnaPalabra("pujante")
+		cancionMasLargaDeParaLosArboles = paraLosArboles.cancionMasLarga()
+		cancionMasLargaDeLaSole = laSole.cancionMasLarga()
+		cancionMasLargaDeEspecialLaFamilia = especialLaFamilia.cancionMasLarga()
+
+	}
+	
+	//Entrega 2
+	
+	test "La cancion Crisantemo es corta"{
+		assert.that(crisantemo.cancionCorta())
+	}
+	
+	test "La cancion Alma de diamante es corta"{
+		assert.notThat(almaDeDiamante.cancionCorta())
+	}
+	
+	test "Soledad es minimalista"{
+		assert.that(soledad.esMinimalista())
+	}
+	
+	test "Luis Alberto es minimalista"{
+		assert.notThat(luisAlberto.esMinimalista())
+	}
+	
+	test "Joaquin es minimalista"{
+		assert.notThat(joaquin.esMinimalista())
+	}
+	
+	test "Las canciones que tienen la palabra cielo de Luis Alberto son Crisantemo y Alma de diamante"{
+		assert.equals(#{crisantemo,almaDeDiamante},cancionesDeLuisAlbertoConLaPalabraCielo)
+	}
+	
+	test "No hay canciones de Luis Alberto con la palabra pujante"{
+		assert.equals(#{},cancionesDeLuisAlbertoConLaPalabraPujante)
+	}
+	
+	test "La duracion de la obra de Kike es 0"{
+		assert.equals(0,kike.duracionDeObra())
+	}
+	
+	test "La duracion de la obra de Soledad es 299"{
+		assert.equals(299,soledad.duracionDeObra())
+	}
+	
+	test "La duracion de la obra de Luis Alberto es 703"{
+		assert.equals(703,luisAlberto.duracionDeObra())
+	}
+	
+	test "La cancion mas larga de Para los arboles es Alma de diamante"{
+		assert.equals(almaDeDiamante,cancionMasLargaDeParaLosArboles)
+	}
+	
+	test "La cancion mas larga de La sole es Eres"{
+		assert.equals(eres,cancionMasLargaDeLaSole)
+	}
+	
+	test "La cancion mas larga de Especial La Familia es La familia"{
+		assert.equals(laFamilia,cancionMasLargaDeEspecialLaFamilia)
+	}
+	
+	test "Luis Alberto la pego"{
+		assert.that(luisAlberto.laPego())
+	}
+	
+	test "Soledad la pego"{
+		assert.notThat(soledad.laPego())
+	}
+	
+	test "Joaquin la pego"{
+		assert.that(joaquin.laPego())
+	}
+	
+}

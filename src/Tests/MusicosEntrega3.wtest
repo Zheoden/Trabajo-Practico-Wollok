@@ -3,9 +3,9 @@ import Cancion.*
 import Exceptions.*
 import Fender.*
 import Gibson.*
-import Joaquin.*
+import MusicoDeGrupo.*
 import LaTrastienda.*
-import Lucia.*
+import VocalistaPopular.*
 import LuisAlberto.*
 import LunaPark.*
 import Musico.*
@@ -14,18 +14,10 @@ import Pimpinela.*
 import Presentacion.*
 import Solista.*
 
-describe "Tests de la entrega 1, 2 y 3"{ 
-	
-	var costoLuisAlbertoTrastienda
-	var costoJoaquinTrastienda
-	var costoLuciaTrastienda
-	var costoLuisAlberto
-	var costoJoaquin
-	var costoLucia
+describe "Tests de la entrega 3"{ 
+
 	var cisne
 	var laFamilia
-	var presentacionLunaPark
-	var presentacionLaTrastienda
 	var almaDeDiamante
 	var crisantemo
 	var eres
@@ -38,11 +30,6 @@ describe "Tests de la entrega 1, 2 y 3"{
 	var joaquin
 	var kike
 	var soledad
-	var cancionesDeLuisAlbertoConLaPalabraCielo
-	var cancionesDeLuisAlbertoConLaPalabraPujante
-	var cancionMasLargaDeParaLosArboles
-	var cancionMasLargaDeLaSole
-	var cancionMasLargaDeEspecialLaFamilia
 	var laFamiliaRemixeada
 	var mashupCrisamentoConAlmaDeDiamante
 	var mashupAlmaDeDiamanteConCrisamento
@@ -65,177 +52,9 @@ describe "Tests de la entrega 1, 2 y 3"{
 		soledad = new Lucia(55,solista,#{laSole},"amor")
 		joaquin = new Joaquin(5,#{especialLaFamilia},20,pimpinela)
 		kike = new Joaquin(20,#{},60,solista)
-		presentacionLunaPark = new Presentacion(2017,04,20,lunaPark,#{luisAlberto,joaquin,lucia})
-		presentacionLaTrastienda = new Presentacion(2017,11,15,laTrastienda,#{luisAlberto,joaquin,lucia})
 		luisAlberto.agregarAlbum(paraLosArboles)
 		luisAlberto.agregarAlbum(justCrisantemo)
-		cancionesDeLuisAlbertoConLaPalabraCielo = luisAlberto.laCancionTieneUnaPalabra("cielo")
-		cancionesDeLuisAlbertoConLaPalabraPujante = luisAlberto.laCancionTieneUnaPalabra("pujante")
-		cancionMasLargaDeParaLosArboles = paraLosArboles.cancionMasLarga()
-		cancionMasLargaDeLaSole = laSole.cancionMasLarga()
-		cancionMasLargaDeEspecialLaFamilia = especialLaFamilia.cancionMasLarga()
-		costoLucia = lucia.costoDeUnaPresentacion(presentacionLunaPark)
-		costoJoaquin = joaquin.costoDeUnaPresentacion(presentacionLunaPark)
-		costoLuisAlberto = luisAlberto.costoDeUnaPresentacion(presentacionLunaPark)
-		costoLuciaTrastienda = lucia.costoDeUnaPresentacion(presentacionLaTrastienda)
-		costoJoaquinTrastienda = joaquin.costoDeUnaPresentacion(presentacionLaTrastienda)
-		costoLuisAlbertoTrastienda = luisAlberto.costoDeUnaPresentacion(presentacionLaTrastienda)
 
-	}
-
-	//Entrega 1
-
-	test "Joaquin canta en Pimpinela y su habilidad es 25" {
-		assert.equals(25,joaquin.habilidad())
-	}
-	
-	test "Joaquin canta en Pimpinela, lanza su carrera solista y su habilidad es 20" {
-		joaquin.dejarGrupo()
-		assert.equals(20, joaquin.habilidad())
-	}
-		
-	test "Lucia canta en Pimpinela, lanza su carrera solista y su habilidad es 70"{
-		lucia.dejarGrupo()
-		assert.equals(70,lucia.habilidad())
-	}
-	test "Luis Alberto toca con la Fender y su habilidad es 80" {
-		assert.equals(80,luisAlberto.habilidad())
-	}
-	
-	test "Luis Albero toca con la Gibson sana y su habilidad es 100" {
-		luisAlberto.guitarra(gibson)
-		assert.equals(100, luisAlberto.habilidad())
-	}
-	
-	test "Luis Alberto toca con la Gibson que no esta sana y su habilidad es 40" {
-		luisAlberto.guitarra(gibson)
-		luisAlberto.maltratarSuGuitarra()
-		assert.equals(40, luisAlberto.habilidad())
-	}
-	
-	test "Joaquin no interpreta bien La Familia" {
-		assert.notThat(joaquin.ejecutaBienUnaCancion(laFamilia))
-	}
-	
-	test "Joaquin interpreta bien Cisne" {
-		assert.that(joaquin.ejecutaBienUnaCancion(cisne))
-	}
-	
-	test "Lucia interpreta bien La Familia" {
-		assert.that(lucia.ejecutaBienUnaCancion(laFamilia))
-	}
-	
-	test "Lucia no interpreta bien Cisne" {
-		assert.notThat(lucia.ejecutaBienUnaCancion(cisne))
-	}
-	
-	test "Luis Alberto interpreta bien Cisne" {
-		assert.that(luisAlberto.ejecutaBienUnaCancion(cisne))
-	}
-	
-	test "Joaquin cobra 50 por Luna Park" {
-		assert.equals(50,joaquin.costoDeUnaPresentacion(presentacionLunaPark)) 
-	}
-	
-	test "Joaquin cobra 100 por actuar solo en la Trastienda" {
-		presentacionLaTrastienda = new Presentacion(2017,11,15,laTrastienda,#{joaquin})
-		assert.equals(100, joaquin.costoDeUnaPresentacion(presentacionLaTrastienda) )
-	}
-	
-	test "Capacidad de la Trastienda el 8/8/2017 es 400" {
-		var fecha = new Date() 
-		fecha.initialize(08,08,2017) 
-    		assert.equals(400, laTrastienda.capacidad(fecha)) 
-	}
-	
-	test "Lucia cobra 500 por la presentacion en el Luna Park" {
-		assert.equals(500,lucia.costoDeUnaPresentacion(presentacionLunaPark))
-	}
-	
-	test "Lucia cobra 400 por la presentacion en la Trastienda" {
-		assert.equals(400,lucia.costoDeUnaPresentacion(presentacionLaTrastienda))
-	}
-	
-	test "Luis Alberto cobra 1000 por la presentacion en el Luna Park" {
-		assert.equals(1000,luisAlberto.costoDeUnaPresentacion(presentacionLunaPark))
-	}
-	
-	test "Luis Alberto cobra 1200 por la presentacion en la trastienda" {
-		assert.equals(1200,luisAlberto.costoDeUnaPresentacion(presentacionLaTrastienda))
-	}
-	
-	test "El costo de la presentacion en el Luna Park es 1550" {
-		assert.equals(1550, costoLucia + costoJoaquin + costoLuisAlberto)
-	}
-	
-	test "El costo de la presentacion en la Trastienda es 1650" {
-		assert.equals(1650, costoLuciaTrastienda + costoJoaquinTrastienda + costoLuisAlbertoTrastienda)
-	}
-	
-	//Entrega 2
-	
-	test "La cancion Crisantemo es corta"{
-		assert.that(crisantemo.cancionCorta())
-	}
-	
-	test "La cancion Alma de diamante es corta"{
-		assert.notThat(almaDeDiamante.cancionCorta())
-	}
-	
-	test "Soledad es minimalista"{
-		assert.that(soledad.esMinimalista())
-	}
-	
-	test "Luis Alberto es minimalista"{
-		assert.notThat(luisAlberto.esMinimalista())
-	}
-	
-	test "Joaquin es minimalista"{
-		assert.notThat(joaquin.esMinimalista())
-	}
-	
-	test "Las canciones que tienen la palabra cielo de Luis Alberto son Crisantemo y Alma de diamante"{
-		assert.equals(#{crisantemo,almaDeDiamante},cancionesDeLuisAlbertoConLaPalabraCielo)
-	}
-	
-	test "No hay canciones de Luis Alberto con la palabra pujante"{
-		assert.equals(#{},cancionesDeLuisAlbertoConLaPalabraPujante)
-	}
-	
-	test "La duracion de la obra de Kike es 0"{
-		assert.equals(0,kike.duracionDeObra())
-	}
-	
-	test "La duracion de la obra de Soledad es 299"{
-		assert.equals(299,soledad.duracionDeObra())
-	}
-	
-	test "La duracion de la obra de Luis Alberto es 703"{
-		assert.equals(703,luisAlberto.duracionDeObra())
-	}
-	
-	test "La cancion mas larga de Para los arboles es Alma de diamante"{
-		assert.equals(almaDeDiamante,cancionMasLargaDeParaLosArboles)
-	}
-	
-	test "La cancion mas larga de La sole es Eres"{
-		assert.equals(eres,cancionMasLargaDeLaSole)
-	}
-	
-	test "La cancion mas larga de Especial La Familia es La familia"{
-		assert.equals(laFamilia,cancionMasLargaDeEspecialLaFamilia)
-	}
-	
-	test "Luis Alberto la pego"{
-		assert.that(luisAlberto.laPego())
-	}
-	
-	test "Soledad la pego"{
-		assert.notThat(soledad.laPego())
-	}
-	
-	test "Joaquin la pego"{
-		assert.that(joaquin.laPego())
 	}
 	
 	//Entrega 3
