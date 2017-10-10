@@ -3,9 +3,9 @@ import Cancion.*
 import Exceptions.*
 import Fender.*
 import Gibson.*
-import Joaquin.*
+import MusicoDeGrupo.*
 import LaTrastienda.*
-import Lucia.*
+import VocalistaPopular.*
 import LuisAlberto.*
 import LunaPark.*
 import Musico.*
@@ -13,7 +13,6 @@ import Pdpalooza.*
 import Pimpinela.*
 import Presentacion.*
 import Solista.*
-
 
 object pdpalooza inherits Presentacion(2017,12,15,lunaPark,#{})  {
 	var cancionDeEvaluacion = new Cancion(510,"Quien sabe Alicia, este pais no estuvo hecho porque si. Te vas a ir, vas a salir pero

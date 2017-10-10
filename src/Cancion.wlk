@@ -3,9 +3,9 @@ import Cancion.*
 import Exceptions.*
 import Fender.*
 import Gibson.*
-import Joaquin.*
+import MusicoDeGrupo.*
 import LaTrastienda.*
-import Lucia.*
+import VocalistaPopular.*
 import LuisAlberto.*
 import LunaPark.*
 import Musico.*

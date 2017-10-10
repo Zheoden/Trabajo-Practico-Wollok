@@ -27,13 +27,7 @@ class Musico {
 	method esMinimalista() = albumesPublicados.all ({album => album.albumMinimalista()})
 	method transformarAlbumACancion() = albumesPublicados.map({album => album.canciones()}).flatten()
 	method laCancionTieneUnaPalabra (palabra) = self.transformarAlbumACancion().filter({ cancion => cancion.estaEnLaLetra(palabra) }).asSet()
-	method duracionDeObra(){
-		if(!albumesPublicados.isEmpty()){
-			return albumesPublicados.sum({album => album.duracionDelAlbum()})
-		}else{
-			return 0
-		}
-	}
+	method duracionDeObra()= albumesPublicados.sum({album => album.duracionDelAlbum()})
 	method laPego() = albumesPublicados.all {album => album.seVendioBien()}
 	method habilidad() = habilidad
 	method esSolista() = grupo.esSolista()
