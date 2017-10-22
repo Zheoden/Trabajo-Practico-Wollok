@@ -15,7 +15,7 @@ import Presentacion.*
 import Solista.*
 
 
-class Joaquin inherits Musico {
+class MusicoDeGrupo inherits Musico {
     var plusPortocarEnGrupo
     
     constructor(elPlusPortocarEnGrupo,losAlbumesPublicados,laHabilidad,grupoOSolista)=
@@ -31,7 +31,7 @@ class Joaquin inherits Musico {
         }
     }
     method ejecutaBienUnaCancion(cancion){    	
-    	return (cancion.duracion() > 300) || (cancion.esDuenioDeLaCancion(self)) || (self.habilidad() > 60)
+    	return (cancion.duracion() > 300)
     }
     method costoDeUnaPresentacion(presentacion){
         if(presentacion.solista()){

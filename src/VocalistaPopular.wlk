@@ -15,7 +15,7 @@ import Presentacion.*
 import Solista.*
 
 
-class Lucia inherits Musico {
+class VocalistaPopular inherits Musico {
 	var palabraClave
 	
 	constructor(unaHabilidad,solitaOEnGrupo,losAlbumesPublicados,laPalabraClave) =
