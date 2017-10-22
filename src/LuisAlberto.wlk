@@ -10,7 +10,7 @@ import LuisAlberto.*
 import LunaPark.*
 import Musico.*
 import Pdpalooza.*
-import Pimpinela.*
+import Banda.*
 import Presentacion.*
 import Solista.*
 
@@ -19,7 +19,7 @@ object luisAlberto inherits Musico(#{},0,solista)  {
 	
 	override method habilidad() = return 100.min(8 * guitarra.valor())
 	
-	method ejecutaBienUnaCancion(cancion) = true
+	override method ejecutaBienUnaCancion(cancion) = true
 	
 	method costoDeUnaPresentacion(presentacion){
 		if(presentacion.esDespuesDeSeptiembreDel17()){

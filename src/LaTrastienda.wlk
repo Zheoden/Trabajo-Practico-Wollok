@@ -10,7 +10,7 @@ import LuisAlberto.*
 import LunaPark.*
 import Musico.*
 import Pdpalooza.*
-import Pimpinela.*
+import Banda.*
 import Presentacion.*
 import Solista.*
 
