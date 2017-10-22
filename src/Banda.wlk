@@ -10,14 +10,14 @@ import LuisAlberto.*
 import LunaPark.*
 import Musico.*
 import Pdpalooza.*
-import Pimpinela.*
+import Banda.*
 import Presentacion.*
 import Solista.*
 
-object pimpinela {
+class Banda {
 	
 	var integrantes = #{}
-	var nombre = "Pimpinela"
+	var nombre
 	
 	method eliminarDelGrupo(integrante){
 		integrantes.remove(integrante)
