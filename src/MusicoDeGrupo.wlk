@@ -14,6 +14,10 @@ import Banda.*
 import Presentacion.*
 import Solista.*
 import Representante.*
+import Impareros.*
+import CantidadDeArtistas.*
+import Capacidad.*
+import ExpectativaInflacionaria.*
 
 
 class MusicoDeGrupo inherits Musico {

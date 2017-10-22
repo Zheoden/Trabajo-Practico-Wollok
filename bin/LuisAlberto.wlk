@@ -14,6 +14,10 @@ import Banda.*
 import Presentacion.*
 import Solista.*
 import Representante.*
+import Impareros.*
+import CantidadDeArtistas.*
+import Capacidad.*
+import ExpectativaInflacionaria.*
 
 object luisAlberto inherits Musico(#{},0,solista)  {
 	var guitarra = fender
