@@ -37,6 +37,7 @@ class Cancion {
 	method contenidoDeTitulo(){
 		return titulo.length()
 	}
+	method esCancionImpar() = duracion % 2 != 0
 	method esDuenioDeLaCancion(elAutor) = autor == elAutor
 	//Comparacion de canciones
 	method comprarDuracion(cancion) = cancion.duracion().max(self.duracion())
