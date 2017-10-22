@@ -30,8 +30,8 @@ class MusicoDeGrupo inherits Musico {
             return habilidad
         }
     }
-    method ejecutaBienUnaCancion(cancion){    	
-    	return (cancion.duracion() > 300)
+    override method ejecutaBienUnaCancion(cancion){    	
+    	return (cancion.duracion() > 300) || super(cancion)
     }
     method costoDeUnaPresentacion(presentacion){
         if(presentacion.solista()){

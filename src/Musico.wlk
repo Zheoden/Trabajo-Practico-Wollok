@@ -19,6 +19,7 @@ class Musico {
 	var albumesPublicados = #{}
 	var habilidad
 	var grupo
+
 	constructor(losAlbumesPublicados,laHabilidad,grupoOSolista){
 		albumesPublicados = losAlbumesPublicados
 		habilidad = laHabilidad
@@ -47,7 +48,9 @@ class Musico {
 			return true
 		}
 	}
-
+	method ejecutaBienUnaCancion(cancion){
+		return (cancion.esDuenioDeLaCancion(self)) || (self.habilidad() > 60)
+	}
 	method dejarGrupo(){
 		grupo.eliminarDelGrupo(self)
 		self.entrarAUnGrupo(solista)

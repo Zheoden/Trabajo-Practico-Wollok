@@ -23,8 +23,8 @@ class VocalistaPopular inherits Musico {
 		palabraClave = laPalabraClave
 	}
 	
-	method ejecutaBienUnaCancion(cancion){
-		return cancion.estaEnLaLetra(palabraClave) || (cancion.esDuenioDeLaCancion(self)) || (self.habilidad() > 60)
+	override method ejecutaBienUnaCancion(cancion){
+		return cancion.estaEnLaLetra(palabraClave) || super(cancion)
 	}
 	method costoDeUnaPresentacion(presentacion){
 		if(presentacion.esEnUnLugarConcurrido()){
