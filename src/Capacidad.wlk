@@ -19,8 +19,22 @@ import CantidadDeArtistas.*
 import Capacidad.*
 import ExpectativaInflacionaria.*
 
-object capacidad {
+class Capacidad {
 
+var costo
+var capacidad
 
+constructor(elCosto,laCapacidad){
+	costo = elCosto
+	capacidad = laCapacidad
+}
+
+method costoDeUnaPresentacion(presentacion){
+	if(presentacion.alcanzaLaCapacidad(capacidad)){
+		return costo
+	}else{
+		return costo -100
+	}
+}
 
 }

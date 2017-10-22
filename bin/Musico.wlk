@@ -23,11 +23,13 @@ class Musico {
 	var albumesPublicados = #{}
 	var habilidad
 	var grupo
+	var formaDeCobrar
 
-	constructor(losAlbumesPublicados,laHabilidad,grupoOSolista){
+	constructor(losAlbumesPublicados,laHabilidad,grupoOSolista,laFormaDeCobrar){
 		albumesPublicados = losAlbumesPublicados
 		habilidad = laHabilidad
 		grupo = grupoOSolista
+		formaDeCobrar = laFormaDeCobrar
 	}
 	method esMinimalista() = albumesPublicados.all ({album => album.albumMinimalista()})
 	method transformarAlbumACancion() = albumesPublicados.map({album => album.canciones()}).flatten()
@@ -56,7 +58,9 @@ class Musico {
 		return (cancion.esDuenioDeLaCancion(self)) || (self.habilidad() > 60)
 	}
 	method cualesTocaBien(canciones) = canciones.filter({cancion => self.ejecutaBienUnaCancion(cancion)})
-	
+	method costoDeUnaPresentacion(presentacion){
+		formaDeCobrar.costoDeUnaPresentacion(presentacion)
+	}
 	
 	method dejarGrupo(){
 		grupo.eliminarDelGrupo(self)

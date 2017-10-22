@@ -19,7 +19,7 @@ import CantidadDeArtistas.*
 import Capacidad.*
 import ExpectativaInflacionaria.*
 
-object expectativaInflacionaria {
+class ExpectativaInflacionaria {
 
 
 

@@ -35,6 +35,7 @@ class Presentacion {
 	method costoDeLaPresentacion() = musicos.sum({ musico => musico.costoDeUnaPresentacion(self) })
 	method solista() = musicos.size() == 1
 	method esEnUnLugarConcurrido() = lugar.esConcurrido(fecha)
+	method alcanzaLaCapacidad(capacidad) = lugar.capacidad() > capacidad 
 	method esDespuesDeSeptiembreDel17() = (fecha.year() >= 2018) || ((fecha.year() == 2017) && (fecha.month() > 9))
 	method magia() = musicos.sum({musico => musico.habilidad()})
 

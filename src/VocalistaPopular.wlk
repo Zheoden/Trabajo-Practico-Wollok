@@ -22,19 +22,12 @@ import ExpectativaInflacionaria.*
 class VocalistaPopular inherits Musico {
 	var palabraClave
 	
-	constructor(unaHabilidad,solitaOEnGrupo,losAlbumesPublicados,laPalabraClave) =
-	super(losAlbumesPublicados,unaHabilidad,solitaOEnGrupo){
+	constructor(unaHabilidad,solitaOEnGrupo,losAlbumesPublicados,laPalabraClave,laFormaDeCobrar) =
+	super(losAlbumesPublicados,unaHabilidad,solitaOEnGrupo,laFormaDeCobrar){
 		palabraClave = laPalabraClave
 	}
 	
 	override method ejecutaBienUnaCancion(cancion){
 		return cancion.estaEnLaLetra(palabraClave) || super(cancion)
-	}
-	method costoDeUnaPresentacion(presentacion){
-		if(presentacion.esEnUnLugarConcurrido()){
-			return 500
-		}else{
-			return 400
-		}
 	}
 }
