@@ -13,6 +13,7 @@ import Pdpalooza.*
 import Banda.*
 import Presentacion.*
 import Solista.*
+import Representante.*
 
 object luisAlberto inherits Musico(#{},0,solista)  {
 	var guitarra = fender

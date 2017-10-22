@@ -13,7 +13,7 @@ import Pdpalooza.*
 import Banda.*
 import Presentacion.*
 import Solista.*
-import Banda.*
+import Representante.*
 
 class Representante {
 

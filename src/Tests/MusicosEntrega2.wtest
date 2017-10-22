@@ -13,6 +13,7 @@ import Pdpalooza.*
 import Banda.*
 import Presentacion.*
 import Solista.*
+import Representante.*
 
 describe "Tests de la entrega 2"{ 
 	

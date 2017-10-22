@@ -14,6 +14,7 @@ import Banda.*
 import Presentacion.*
 import Solista.*
 import Representante.*
+import Representante.*
 
 class Banda {
 	
