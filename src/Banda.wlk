@@ -27,7 +27,7 @@ class Banda {
 		representante = elRepresentante		
 	}
 	method habilidad() = integrantes.sum({integrante => integrante.habilidad()}) * 1.1
-	method costoDeLaBanda(presentacion) = integrantes.sum({integrante => integrante.costoDeUnaPresentacion(presentacion)}) + representante.costo()
+	method costoDeUnaPresentacion(presentacion) = integrantes.sum({integrante => integrante.costoDeUnaPresentacion(presentacion)}) + representante.costo()
 	method interpretaBienLaCancion(cancion) = integrantes.all({integrante => integrante.ejecutaBienUnaCancion(cancion)})
 	method representante() = representante
 	method nombre() = nombre
