@@ -52,6 +52,9 @@ class Musico {
 	method ejecutaBienUnaCancion(cancion){
 		return (cancion.esDuenioDeLaCancion(self)) || (self.habilidad() > 60)
 	}
+	method cualesTocaBien(canciones) = canciones.filter({cancion => self.ejecutaBienUnaCancion(cancion)})
+	
+	
 	method dejarGrupo(){
 		grupo.eliminarDelGrupo(self)
 		self.entrarAUnGrupo(solista)
