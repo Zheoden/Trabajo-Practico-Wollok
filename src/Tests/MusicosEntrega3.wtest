@@ -39,6 +39,7 @@ describe "Tests de la entrega 3"{
 	var mashupCrisamentoConAlmaDeDiamante
 	var mashupAlmaDeDiamanteConCrisamento
 	var pimpinela = new Banda(#{joaquin,lucia},"pimpinela",null)
+	var cobroParaVocalistaPopular = new Capacidad(500,5000)
 	
 	fixture{		
 		laFamilia = new Cancion(264, "Quiero brindar por mi gente sencilla, por el amor brindo por la familia","La Familia",joaquin)
@@ -53,9 +54,9 @@ describe "Tests de la entrega 3"{
 		especialLaFamilia = new Album("Especial La Familia",#{laFamilia},new Date(17,6,1992),100000,89000)
 		paraLosArboles = new Album("Para los arboles",#{cisne,almaDeDiamante},new Date(31,3,2003),50000,49000)
 		justCrisantemo = new Album("Just Crisantemo",#{crisantemo},new Date(5,12,2007),28000,27500)
-		lucia = new VocalistaPopular(70,pimpinela,#{},"familia")
+		lucia = new VocalistaPopular(70,pimpinela,#{},"familia",cobroParaVocalistaPopular)
 		laSole = new Album("La Sole",#{eres,corazonAmericano},new Date(4,2,2005),200000,130000)
-		soledad = new VocalistaPopular(55,solista,#{laSole},"amor")
+		soledad = new VocalistaPopular(55,solista,#{laSole},"amor",cobroParaVocalistaPopular)
 		joaquin = new MusicoDeGrupo(5,#{especialLaFamilia},20,pimpinela,300)
 		kike = new MusicoDeGrupo(20,#{},60,solista,300)
 		luisAlberto.agregarAlbum(paraLosArboles)
