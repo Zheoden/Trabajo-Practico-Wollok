@@ -18,11 +18,13 @@ import Banda.*
 class Representante {
 
         var nombre
-        var cuantoCobra
+        var costo
 
         constructor(nuevoNombre,nuevoCobro){
                 nombre = nuevoNombre
-                cuantoCobra = nuevoCobro
+                costo = nuevoCobro
         }
+
+        method costo() = costo
 
 }
