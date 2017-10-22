@@ -25,6 +25,7 @@ class Banda {
 		nombre = elNombre
 		representante = elRepresentante		
 	}
+	method habilidad() = integrantes.sum({integrante => integrante.habilidad()}) * 1.1
 	method representante() = representante
 	method nombre() = nombre
 	method eliminarDelGrupo(integrante){

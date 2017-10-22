@@ -33,7 +33,7 @@ describe "Tests de la entrega 1"{
 	var justCrisantemo
 	var lucia
 	var joaquin
-	var pimpinela = new Banda()
+	var pimpinela = new Banda(#{joaquin,lucia},"pimpinela",null)
 	
 	fixture{		
 		laFamilia = new Cancion(264, "Quiero brindar por mi gente sencilla, por el amor brindo por la familia","La Familia",joaquin)
