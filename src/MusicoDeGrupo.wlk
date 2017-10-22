@@ -18,10 +18,12 @@ import Representante.*
 
 class MusicoDeGrupo inherits Musico {
     var plusPortocarEnGrupo
+    var segundosParaTocarBien
     
-    constructor(elPlusPortocarEnGrupo,losAlbumesPublicados,laHabilidad,grupoOSolista)=
+    constructor(elPlusPortocarEnGrupo,losAlbumesPublicados,laHabilidad,grupoOSolista,losSegundosParaTocarBien)=
     super(losAlbumesPublicados,laHabilidad,grupoOSolista){
     	plusPortocarEnGrupo = elPlusPortocarEnGrupo
+    	segundosParaTocarBien = losSegundosParaTocarBien
     }
     
     override method habilidad(){
@@ -32,7 +34,7 @@ class MusicoDeGrupo inherits Musico {
         }
     }
     override method ejecutaBienUnaCancion(cancion){    	
-    	return (cancion.duracion() > 300) || super(cancion)
+    	return (cancion.duracion() > segundosParaTocarBien) || super(cancion)
     }
     method costoDeUnaPresentacion(presentacion){
         if(presentacion.solista()){
