@@ -18,7 +18,15 @@ class Banda {
 	
 	var integrantes = #{}
 	var nombre
+	var representante
 	
+	constructor(losIntegrantes,elNombre,elRepresentante){
+		integrantes = losIntegrantes
+		nombre = elNombre
+		representante = elRepresentante		
+	}
+	method representante() = representante
+	method nombre() = nombre
 	method eliminarDelGrupo(integrante){
 		integrantes.remove(integrante)
 	}
