@@ -40,7 +40,4 @@ class MusicoDeGrupo inherits Musico {
     override method ejecutaBienUnaCancion(cancion){    	
     	return (cancion.duracion() > segundosParaTocarBien) || super(cancion)
     }
-    method costoDeUnaPresentacion(presentacion){
-        formaDeCobrar.costoDeUnaPresentacion(presentacion)
-    }
 }

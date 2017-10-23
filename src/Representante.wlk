@@ -21,14 +21,12 @@ import ExpectativaInflacionaria.*
 
 class Representante {
 
-        var nombre
-        var costo
+	var nombre
+	var costo
 
-        constructor(nuevoNombre,nuevoCobro){
-                nombre = nuevoNombre
-                costo = nuevoCobro
-        }
-
-        method costo() = costo
-
+	constructor(nuevoNombre,nuevoCobro){
+		nombre = nuevoNombre
+		costo = nuevoCobro
+	}
+	method costo() = costo
 }
