@@ -23,6 +23,12 @@ import Palabreros.*
 
 class Larguero {
 
-
+  var cantidadDeSegundos
+  
+  constructor(unaCantidadDeSegundos){
+    cantidadDeSegundos = unaCantidadDeSegundos
+  }
+  
+  method ejecutaBienUnaCancion(cancion) = cancion.duracion() > cantidadDeSegundos
 
 }
