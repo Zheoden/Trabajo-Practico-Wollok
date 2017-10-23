@@ -64,7 +64,7 @@ describe "Tests de la entrega 4"{
 		laSole = new Album("La Sole",#{eres,corazonAmericano},new Date(4,2,2005),200000,130000)
 		soledad = new VocalistaPopular(55,pimpisole,#{laSole},"amor",new CantidadDeArtistas(6000), new Palabrero("amor"))
 		joaquin = new MusicoDeGrupo(5,#{especialLaFamilia},20,pimpisole,new CantidadDeArtistas(100),new Larguero(300))
-		kike = new MusicoDeGrupo(20,#{},60,elEternoRetorno,new ExpectativaInflacionaria(4000,new Date(8,1,2018),50),new Imparero())
+		kike = new MusicoDeGrupo(20,#{},60,elEternoRetorno,new ExpectativaInflacionaria(4000,new Date(8,1,2018),1.5),new Imparero())
 		luisAlberto.agregarAlbum(paraLosArboles)
 		luisAlberto.agregarAlbum(justCrisantemo)
 		presentacionPrixDAmi = new Presentacion(2017,06,30,prixDAmi,#{joaquin,soledad,elEternoRetorno})
