@@ -20,9 +20,16 @@ import Capacidad.*
 import ExpectativaInflacionaria.*
 import Largueros.*
 import Palabreros.*
+import Impareros.*
 
 class Palabrero {
 
+  var palabra
+  
+  constructor(unaPalabra){
+    palabra = unaPalabra
+  }
 
+  method ejecutaBienUnaCancion(cancion) = cancion.letra().contains(palabra)
 
 }
