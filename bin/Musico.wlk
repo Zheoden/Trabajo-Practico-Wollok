@@ -18,6 +18,8 @@ import Impareros.*
 import CantidadDeArtistas.*
 import Capacidad.*
 import ExpectativaInflacionaria.*
+import Largueros.*
+import Palabreros.*
 
 class Musico {
 	var albumesPublicados = #{}
@@ -61,7 +63,7 @@ class Musico {
 	}
 	method cualesTocaBien(canciones) = canciones.filter({cancion => self.ejecutaBienUnaCancion(cancion)})
 	method costoDeUnaPresentacion(presentacion){
-		formaDeCobrar.costoDeUnaPresentacion(presentacion)
+		return formaDeCobrar.costoDeUnaPresentacion(presentacion)
 	}
 	
 	method dejarGrupo(){

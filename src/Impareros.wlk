@@ -18,15 +18,17 @@ import Impareros.*
 import CantidadDeArtistas.*
 import Capacidad.*
 import ExpectativaInflacionaria.*
+import Largueros.*
+import Palabreros.*
 
-class Impareros inherits Musico {
+class Imparero inherits Musico {
 
 	
 	constructor(unaHabilidad,solistaOEnGrupo,losAlbumesPublicados,laFormaDeCobrar) =
-	super(losAlbumesPublicados,unaHabilidad,solistaOEnGrupo,laFormaDeCobrar){
+	super(losAlbumesPublicados,unaHabilidad,solistaOEnGrupo,laFormaDeCobrar,){
 	}
 	
-	override method ejecutaBienUnaCancion(cancion){
+	method ejecutaBienUnaCancion(cancion){
 		return cancion.esCancionImpar() || super(cancion)
 	}
 }

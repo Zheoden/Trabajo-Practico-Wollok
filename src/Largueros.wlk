@@ -21,22 +21,8 @@ import ExpectativaInflacionaria.*
 import Largueros.*
 import Palabreros.*
 
-class Capacidad {
+class Larguero {
 
-var costo
-var capacidad
 
-constructor(elCosto,laCapacidad){
-	costo = elCosto
-	capacidad = laCapacidad
-}
-
-method costoDeUnaPresentacion(presentacion){
-	if(presentacion.alcanzaLaCapacidad(capacidad)){
-		return costo
-	}else{
-		return costo -100
-	}
-}
 
 }

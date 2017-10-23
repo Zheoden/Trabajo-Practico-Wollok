@@ -18,6 +18,8 @@ import Impareros.*
 import CantidadDeArtistas.*
 import Capacidad.*
 import ExpectativaInflacionaria.*
+import Largueros.*
+import Palabreros.*
 
 class Album {
 	var titulo

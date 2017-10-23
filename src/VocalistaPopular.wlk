@@ -18,12 +18,14 @@ import Impareros.*
 import CantidadDeArtistas.*
 import Capacidad.*
 import ExpectativaInflacionaria.*
+import Largueros.*
+import Palabreros.*
 
 class VocalistaPopular inherits Musico {
 	var palabraClave
 	
 	constructor(unaHabilidad,solitaOEnGrupo,losAlbumesPublicados,laPalabraClave,laFormaDeCobrar) =
-	super(losAlbumesPublicados,unaHabilidad,solitaOEnGrupo,laFormaDeCobrar){
+	super(losAlbumesPublicados,unaHabilidad,solitaOEnGrupo,laFormaDeCobrar,new Palabrero()){
 		palabraClave = laPalabraClave
 	}
 	

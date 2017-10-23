@@ -18,13 +18,14 @@ import Impareros.*
 import CantidadDeArtistas.*
 import Capacidad.*
 import ExpectativaInflacionaria.*
-
+import Largueros.*
+import Palabreros.*
 
 class MusicoDeGrupo inherits Musico {
     var plusPortocarEnGrupo
     
     constructor(elPlusPortocarEnGrupo,losAlbumesPublicados,laHabilidad,grupoOSolista,laFormaDeCobrar)=
-    super(losAlbumesPublicados,laHabilidad,grupoOSolista,laFormaDeCobrar){
+    super(losAlbumesPublicados,laHabilidad,grupoOSolista,laFormaDeCobrar,new Larguero()){
     	plusPortocarEnGrupo = elPlusPortocarEnGrupo
     }
     
