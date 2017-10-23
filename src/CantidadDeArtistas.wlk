@@ -21,6 +21,18 @@ import ExpectativaInflacionaria.*
 
 class CantidadDeArtistas {
 
+  var costo
 
+  constructor(unCosto){
+    costo = unCosto
+  }
+
+  method costoDeUnaPresentacion(presentacion){
+    if(presentacion.solista()){
+      return costo
+    }else{
+      return costo/2
+    }
+  }
 
 }
