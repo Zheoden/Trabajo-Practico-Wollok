@@ -21,6 +21,22 @@ import ExpectativaInflacionaria.*
 
 class ExpectativaInflacionaria {
 
+  var precio
+  var fecha
+  var porcentaje
 
+  constructor(unPrecio,unaFecha,unPorcentaje){
+    precio = unPrecio
+    fecha = unaFecha
+    porcentaje = unPorcentaje
+  }
+
+  method costoDeUnaPresentacion(presentacion){
+    if(fecha > presentacion.fecha()){
+      return precio * porcentaje
+    }else{
+      return precio
+    }
+  }
 
 }
