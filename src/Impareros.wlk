@@ -22,8 +22,8 @@ import ExpectativaInflacionaria.*
 class Impareros inherits Musico {
 
 	
-	constructor(unaHabilidad,solitaOEnGrupo,losAlbumesPublicados) =
-	super(losAlbumesPublicados,unaHabilidad,solitaOEnGrupo){
+	constructor(unaHabilidad,solistaOEnGrupo,losAlbumesPublicados,laFormaDeCobrar) =
+	super(losAlbumesPublicados,unaHabilidad,solistaOEnGrupo,laFormaDeCobrar){
 	}
 	
 	override method ejecutaBienUnaCancion(cancion){
