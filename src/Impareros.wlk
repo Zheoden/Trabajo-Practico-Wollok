@@ -21,14 +21,9 @@ import ExpectativaInflacionaria.*
 import Largueros.*
 import Palabreros.*
 
-class Imparero inherits Musico {
-
-	
-	constructor(unaHabilidad,solistaOEnGrupo,losAlbumesPublicados,laFormaDeCobrar) =
-	super(losAlbumesPublicados,unaHabilidad,solistaOEnGrupo,laFormaDeCobrar,){
-	}
-	
+class Imparero {
+		
 	method ejecutaBienUnaCancion(cancion){
-		return cancion.esCancionImpar() || super(cancion)
+		return cancion.esCancionImpar()
 	}
 }
