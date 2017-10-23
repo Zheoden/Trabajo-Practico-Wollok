@@ -24,8 +24,8 @@ import Palabreros.*
 class MusicoDeGrupo inherits Musico {
     var plusPortocarEnGrupo
     
-    constructor(elPlusPortocarEnGrupo,losAlbumesPublicados,laHabilidad,grupoOSolista,laFormaDeCobrar)=
-    super(losAlbumesPublicados,laHabilidad,grupoOSolista,laFormaDeCobrar,new Larguero()){
+    constructor(elPlusPortocarEnGrupo,losAlbumesPublicados,laHabilidad,grupoOSolista,laFormaDeCobrar,laFormaDeTocar)=
+    super(losAlbumesPublicados,laHabilidad,grupoOSolista,laFormaDeCobrar,laFormaDeTocar){
     	plusPortocarEnGrupo = elPlusPortocarEnGrupo
     }
     
