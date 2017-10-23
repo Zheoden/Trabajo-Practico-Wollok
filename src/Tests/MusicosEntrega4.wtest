@@ -20,6 +20,7 @@ import Capacidad.*
 import ExpectativaInflacionaria.*
 import Largueros.*
 import Palabreros.*
+import LugaresParaFixture.*
 
 describe "Tests de la entrega 4"{ 
 	
