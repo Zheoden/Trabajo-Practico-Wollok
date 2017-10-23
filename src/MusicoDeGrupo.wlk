@@ -24,8 +24,8 @@ class MusicoDeGrupo inherits Musico {
     var plusPortocarEnGrupo
     var segundosParaTocarBien
     
-    constructor(elPlusPortocarEnGrupo,losAlbumesPublicados,laHabilidad,grupoOSolista,losSegundosParaTocarBien)=
-    super(losAlbumesPublicados,laHabilidad,grupoOSolista){
+    constructor(elPlusPortocarEnGrupo,losAlbumesPublicados,laHabilidad,grupoOSolista,losSegundosParaTocarBien,laFormaDeCobrar)=
+    super(losAlbumesPublicados,laHabilidad,grupoOSolista,laFormaDeCobrar){
     	plusPortocarEnGrupo = elPlusPortocarEnGrupo
     	segundosParaTocarBien = losSegundosParaTocarBien
     }
@@ -41,10 +41,6 @@ class MusicoDeGrupo inherits Musico {
     	return (cancion.duracion() > segundosParaTocarBien) || super(cancion)
     }
     method costoDeUnaPresentacion(presentacion){
-        if(presentacion.solista()){
-            return 100
-        }else{
-            return 50
-        }
+        formaDeCobrar.costoDeUnaPresentacion(presentacion)
     }
 }
