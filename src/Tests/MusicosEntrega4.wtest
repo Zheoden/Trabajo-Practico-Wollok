@@ -78,8 +78,8 @@ describe "Tests de la entrega 4"{
 
 	//Entrega 4
 
-	test "el Costo de la Presentacion en La Cueva es de 8582"{
-		assert.equals(presentacionlaCueva.costoDeLaPresentacion(),8582)
+	test "el Costo de la Presentacion en La Cueva es de 5532"{
+		assert.equals(presentacionlaCueva.costoDeLaPresentacion(),5532)
 	}
 	test "el Costo de la Presentacion en Prim D'Ami es de 10550"{
 		assert.equals(presentacionPrixDAmi.costoDeLaPresentacion(),10550)
