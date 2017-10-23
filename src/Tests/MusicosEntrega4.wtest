@@ -24,7 +24,6 @@ import LugaresParaFixture.*
 
 describe "Tests de la entrega 4"{ 
 	
-	
 	var presentacionlaCueva
 	var presentacionPrixDAmi
 	var cisne
@@ -44,8 +43,8 @@ describe "Tests de la entrega 4"{
 	var laFamiliaRemixeada
 	var mashupCrisamentoConAlmaDeDiamante
 	var mashupAlmaDeDiamanteConCrisamento
-	var pimpisole = new Banda(#{soledad,joaquin,lucia},"pimpisole",new Representante("Cachorro",1982))
-	var elEternoRetorno = new Banda(#{kike,luisAlberto},"El Eterno Retorno",new Representante("Felix",500))
+	var pimpisole
+	var elEternoRetorno
 	
 	fixture{		
 		laFamilia = new Cancion(264, "Quiero brindar por mi gente sencilla, por el amor brindo por la familia","La Familia",joaquin)
@@ -60,20 +59,25 @@ describe "Tests de la entrega 4"{
 		especialLaFamilia = new Album("Especial La Familia",#{laFamilia},new Date(17,6,1992),100000,89000)
 		paraLosArboles = new Album("Para los arboles",#{cisne,almaDeDiamante},new Date(31,3,2003),50000,49000)
 		justCrisantemo = new Album("Just Crisantemo",#{crisantemo},new Date(5,12,2007),28000,27500)
-		lucia = new VocalistaPopular(70,pimpisole,#{},"familia",new Capacidad(500,5000), new Palabrero("familia"))
+		lucia = new VocalistaPopular(70,solista,#{},"familia",new Capacidad(500,5000), new Palabrero("familia"))
 		laSole = new Album("La Sole",#{eres,corazonAmericano},new Date(4,2,2005),200000,130000)
-		soledad = new VocalistaPopular(55,pimpisole,#{laSole},"amor",new CantidadDeArtistas(6000), new Palabrero("amor"))
-		joaquin = new MusicoDeGrupo(5,#{especialLaFamilia},20,pimpisole,new CantidadDeArtistas(100),new Larguero(300))
-		kike = new MusicoDeGrupo(20,#{},60,elEternoRetorno,new ExpectativaInflacionaria(4000,new Date(8,1,2018),1.5),new Imparero())
+		soledad = new VocalistaPopular(55,solista,#{laSole},"amor",new CantidadDeArtistas(6000), new Palabrero("amor"))
+		joaquin = new MusicoDeGrupo(5,#{especialLaFamilia},20,solista,new CantidadDeArtistas(100),new Larguero(300))
+		kike = new MusicoDeGrupo(20,#{},60,elEternoRetorno,new ExpectativaInflacionaria(4000,new Date(8,1,2018),50),new Imparero())
 		luisAlberto.agregarAlbum(paraLosArboles)
 		luisAlberto.agregarAlbum(justCrisantemo)
+		pimpisole = new Banda(#{soledad,joaquin,lucia},"pimpisole",new Representante("Cachorro",1982))
+		elEternoRetorno = new Banda(#{kike,luisAlberto},"El Eterno Retorno",new Representante("Felix",500))
 		presentacionPrixDAmi = new Presentacion(2017,06,30,prixDAmi,#{joaquin,soledad,elEternoRetorno})
 		presentacionlaCueva = new Presentacion(2017,06,30,laCueva,#{pimpisole})
+		joaquin.entrarAUnGrupo(pimpisole)
+		soledad.entrarAUnGrupo(pimpisole)
+		lucia.entrarAUnGrupo(pimpisole)
 	}
 
 	//Entrega 4
 
-	test "" {
-		assert.that(true)
+	test "el Costo de la Presentacion en La Cueva es de 8582"{
+		assert.equals(presentacionlaCueva.costoDeLaPresentacion(),8582)
 	}
 }
