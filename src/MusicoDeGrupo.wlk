@@ -22,12 +22,10 @@ import ExpectativaInflacionaria.*
 
 class MusicoDeGrupo inherits Musico {
     var plusPortocarEnGrupo
-    var segundosParaTocarBien
     
-    constructor(elPlusPortocarEnGrupo,losAlbumesPublicados,laHabilidad,grupoOSolista,losSegundosParaTocarBien,laFormaDeCobrar)=
+    constructor(elPlusPortocarEnGrupo,losAlbumesPublicados,laHabilidad,grupoOSolista,laFormaDeCobrar)=
     super(losAlbumesPublicados,laHabilidad,grupoOSolista,laFormaDeCobrar){
     	plusPortocarEnGrupo = elPlusPortocarEnGrupo
-    	segundosParaTocarBien = losSegundosParaTocarBien
     }
     
     override method habilidad(){
@@ -38,6 +36,6 @@ class MusicoDeGrupo inherits Musico {
         }
     }
     override method ejecutaBienUnaCancion(cancion){    	
-    	return (cancion.duracion() > segundosParaTocarBien) || super(cancion)
+    	return (cancion.duracion() > 300) || super(cancion)
     }
 }
