@@ -63,7 +63,7 @@ describe "Tests de la entrega 4"{
 		laSole = new Album("La Sole",#{eres,corazonAmericano},new Date(4,2,2005),200000,130000)
 		soledad = new VocalistaPopular(55,solista,#{laSole},"amor",new CantidadDeArtistas(6000), new Palabrero("amor"))
 		joaquin = new MusicoDeGrupo(5,#{especialLaFamilia},20,solista,new CantidadDeArtistas(100),new Larguero(300))
-		kike = new MusicoDeGrupo(20,#{},60,elEternoRetorno,new ExpectativaInflacionaria(4000,new Date(8,1,2018),50),new Imparero())
+		kike = new MusicoDeGrupo(20,#{},60,solista,new ExpectativaInflacionaria(4000,new Date(8,1,2018),1.5),new Imparero())
 		luisAlberto.agregarAlbum(paraLosArboles)
 		luisAlberto.agregarAlbum(justCrisantemo)
 		pimpisole = new Banda(#{soledad,joaquin,lucia},"pimpisole",new Representante("Cachorro",1982))
@@ -73,11 +73,18 @@ describe "Tests de la entrega 4"{
 		joaquin.entrarAUnGrupo(pimpisole)
 		soledad.entrarAUnGrupo(pimpisole)
 		lucia.entrarAUnGrupo(pimpisole)
+		kike.entrarAUnGrupo(elEternoRetorno)
 	}
 
 	//Entrega 4
 
 	test "el Costo de la Presentacion en La Cueva es de 8582"{
 		assert.equals(presentacionlaCueva.costoDeLaPresentacion(),8582)
+	}
+	test "el Costo de la Presentacion en Prim D'Ami es de 10550"{
+		assert.equals(presentacionPrixDAmi.costoDeLaPresentacion(),10550)
+	}
+	test "kike interpreta bien la cancion crisantemo"{
+		assert.that(kike.ejecutaBienUnaCancion(crisantemo))
 	}
 }
