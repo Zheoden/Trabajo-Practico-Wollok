@@ -78,13 +78,41 @@ describe "Tests de la entrega 4"{
 
 	//Entrega 4
 
-	test "el Costo de la Presentacion en La Cueva es de 5532"{
-		assert.equals(presentacionlaCueva.costoDeLaPresentacion(),5532)
+	test "el Costo de la Presentacion La Cueva es de 8582"{
+		assert.equals(presentacionlaCueva.costoDeLaPresentacion(),8582)
 	}
-	test "el Costo de la Presentacion en Prim D'Ami es de 10550"{
+	test "el Costo de la Presentacion Prix D'Ami es de 10550"{
 		assert.equals(presentacionPrixDAmi.costoDeLaPresentacion(),10550)
 	}
-	test "kike interpreta bien la cancion crisantemo"{
-		assert.that(kike.ejecutaBienUnaCancion(crisantemo))
+	test "lucia interpreta bien la cancion la familia porque contiene la palabra familia"{
+		assert.that(lucia.ejecutaBienUnaCancion(laFamilia))
+	}
+	test "joaquin no interpreta bien la cancion crisantemo porque no dura mas de 300 segundos, no es de el y no tiene mas de 60 de habilidad"{
+		assert.notThat(joaquin.ejecutaBienUnaCancion(crisantemo))
+	}
+	test "kike interpreta bien la cancion eres porque es imparero"{
+		assert.that(kike.ejecutaBienUnaCancion(eres))
+	}
+	test "la habilidad de pimpisole es 165"{
+		assert.equals(pimpisole.habilidad(),165)
+	}
+	// redefino de nuevo la familia porque el fixture no entiende a joaquin como el cantante
+	// al mismo tiempo si defino primero a joaquin explota el fixture
+	test "pimpisole interpreta bien la cancion la familia"{
+		var laFamilia2 = new Cancion(264, "Quiero brindar por mi gente sencilla, por el amor brindo por la familia","La Familia",joaquin)
+		assert.that(pimpisole.interpretaBienLaCancion(laFamilia2))
+	}
+	test "joaquin, de las canciones la familia y eres, solo interpreta bien la cancion la familia"{
+		var laFamilia2 = new Cancion(264, "Quiero brindar por mi gente sencilla, por el amor brindo por la familia","La Familia",joaquin)
+		assert.equals(joaquin.cualesTocaBien(#{laFamilia2,eres}),#{laFamilia2})
+	}
+	test "la magia de la presentacion Prix D'Ami es 256"{
+		assert.equals(presentacionPrixDAmi.magia(),256)
+	}
+	test "joaquin cobra 100 pesos por tocar en La Cueva"{
+		assert.equals(joaquin.costoDeUnaPresentacion(presentacionlaCueva))
+	}
+	test "lucia cobra 400 pesos por tocar en Prix D'Ami"{
+		assert.equals(lucia.costoDeUnaPresentacion(presentacionPrixDAmi),400)
 	}
 }
